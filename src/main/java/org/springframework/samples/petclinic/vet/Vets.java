@@ -28,15 +28,17 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Arjen Poutsma
  */
 @XmlRootElement
-public class Vets {
-
-	private List<Vet> vets;
-
-	@XmlElement
-	public List<Vet> getVetList() {
+public record Vets (List<VetDto> vets){
+	
+	public Vets(List<VetDto> vets){
 		if (vets == null) {
 			vets = new ArrayList<>();
 		}
+		this.vets = vets;
+	}
+
+	@XmlElement
+	public List<VetDto> getVetList() {
 		return vets;
 	}
 

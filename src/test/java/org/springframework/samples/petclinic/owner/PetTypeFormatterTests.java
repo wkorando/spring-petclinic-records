@@ -75,21 +75,19 @@ class PetTypeFormatterTests {
 
 	/**
 	 * Helper method to produce some sample pet types just for test purpose
+	 * 
 	 * @return {@link Collection} of {@link PetType}
 	 */
 	private List<PetType> makePetTypes() {
-		List<PetType> petTypes = new ArrayList<>();
-		petTypes.add(new PetType() {
+		return List.of(new PetType() {
 			{
 				setName("Dog");
 			}
-		});
-		petTypes.add(new PetType() {
+		}, new PetType() {
 			{
 				setName("Bird");
 			}
 		});
-		return petTypes;
 	}
 
 }

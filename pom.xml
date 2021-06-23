@@ -4,20 +4,20 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.springframework.samples</groupId>
-  <artifactId>spring-petclinic</artifactId>
-  <version>2.4.5</version>
+  <artifactId>spring-petclinic-16</artifactId>
+  <version>2.5.1</version>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.4.5</version>
+    <version>2.5.1</version>
   </parent>
-  <name>petclinic</name>
+  <name>petclinic-16</name>
 
   <properties>
 
     <!-- Generic properties -->
-    <java.version>1.8</java.version>
+    <java.version>16</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -123,53 +123,53 @@
 
   <build>
     <plugins>
-      <plugin>
-        <groupId>io.spring.javaformat</groupId>
-        <artifactId>spring-javaformat-maven-plugin</artifactId>
-        <version>${spring-format.version}</version>
-        <executions>
-          <execution>
-            <phase>validate</phase>
-            <goals>
-              <goal>validate</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>3.1.1</version>
-        <dependencies>
-          <dependency>
-            <groupId>com.puppycrawl.tools</groupId>
-            <artifactId>checkstyle</artifactId>
-            <version>8.32</version>
-          </dependency>
-          <dependency>
-            <groupId>io.spring.nohttp</groupId>
-            <artifactId>nohttp-checkstyle</artifactId>
-            <version>${nohttp-checkstyle.version}</version>
-          </dependency>
-        </dependencies>
-        <executions>
-          <execution>
-            <id>nohttp-checkstyle-validation</id>
-            <phase>validate</phase>
-            <configuration>
-              <configLocation>src/checkstyle/nohttp-checkstyle.xml</configLocation>
-              <suppressionsLocation>src/checkstyle/nohttp-checkstyle-suppressions.xml</suppressionsLocation>
-              <encoding>UTF-8</encoding>
-              <sourceDirectories>${basedir}</sourceDirectories>
-              <includes>**/*</includes>
-              <excludes>**/.git/**/*,**/.idea/**/*,**/target/**/,**/.flattened-pom.xml,**/*.class</excludes>
-            </configuration>
-            <goals>
-              <goal>check</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+<!--       <plugin> -->
+<!--         <groupId>io.spring.javaformat</groupId> -->
+<!--         <artifactId>spring-javaformat-maven-plugin</artifactId> -->
+<!--         <version>${spring-format.version}</version> -->
+<!--         <executions> -->
+<!--           <execution> -->
+<!--             <phase>validate</phase> -->
+<!--             <goals> -->
+<!--               <goal>validate</goal> -->
+<!--             </goals> -->
+<!--           </execution> -->
+<!--         </executions> -->
+<!--       </plugin> -->
+<!--       <plugin> -->
+<!--         <groupId>org.apache.maven.plugins</groupId> -->
+<!--         <artifactId>maven-checkstyle-plugin</artifactId> -->
+<!--         <version>3.1.1</version> -->
+<!--         <dependencies> -->
+<!--           <dependency> -->
+<!--             <groupId>com.puppycrawl.tools</groupId> -->
+<!--             <artifactId>checkstyle</artifactId> -->
+<!--             <version>8.32</version> -->
+<!--           </dependency> -->
+<!--           <dependency> -->
+<!--             <groupId>io.spring.nohttp</groupId> -->
+<!--             <artifactId>nohttp-checkstyle</artifactId> -->
+<!--             <version>${nohttp-checkstyle.version}</version> -->
+<!--           </dependency> -->
+<!--         </dependencies> -->
+<!--         <executions> -->
+<!--           <execution> -->
+<!--             <id>nohttp-checkstyle-validation</id> -->
+<!--             <phase>validate</phase> -->
+<!--             <configuration> -->
+<!--               <configLocation>src/checkstyle/nohttp-checkstyle.xml</configLocation> -->
+<!--               <suppressionsLocation>src/checkstyle/nohttp-checkstyle-suppressions.xml</suppressionsLocation> -->
+<!--               <encoding>UTF-8</encoding> -->
+<!--               <sourceDirectories>${basedir}</sourceDirectories> -->
+<!--               <includes>**/*</includes> -->
+<!--               <excludes>**/.git/**/*,**/.idea/**/*,**/target/**/,**/.flattened-pom.xml,**/*.class</excludes> -->
+<!--             </configuration> -->
+<!--             <goals> -->
+<!--               <goal>check</goal> -->
+<!--             </goals> -->
+<!--           </execution> -->
+<!--         </executions> -->
+<!--       </plugin> -->
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
@@ -335,19 +335,19 @@
               <configuration>
                 <lifecycleMappingMetadata>
                   <pluginExecutions>
-                    <pluginExecution>
-                      <pluginExecutionFilter>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-checkstyle-plugin</artifactId>
-                        <versionRange>[1,)</versionRange>
-                        <goals>
-                          <goal>check</goal>
-                        </goals>
-                      </pluginExecutionFilter>
-                      <action>
-                        <ignore/>
-                      </action>
-                    </pluginExecution>
+<!--                     <pluginExecution> -->
+<!--                       <pluginExecutionFilter> -->
+<!--                         <groupId>org.apache.maven.plugins</groupId> -->
+<!--                         <artifactId>maven-checkstyle-plugin</artifactId> -->
+<!--                         <versionRange>[1,)</versionRange> -->
+<!--                         <goals> -->
+<!--                           <goal>check</goal> -->
+<!--                         </goals> -->
+<!--                       </pluginExecutionFilter> -->
+<!--                       <action> -->
+<!--                         <ignore/> -->
+<!--                       </action> -->
+<!--                     </pluginExecution> -->
                     <pluginExecution>
                       <pluginExecutionFilter>
                         <groupId>org.springframework.boot</groupId>
@@ -361,19 +361,19 @@
                         <ignore/>
                       </action>
                     </pluginExecution>
-                    <pluginExecution>
-                      <pluginExecutionFilter>
-                        <groupId>io.spring.javaformat</groupId>
-                        <artifactId>spring-javaformat-maven-plugin</artifactId>
-                        <versionRange>[0,)</versionRange>
-                        <goals>
-                          <goal>validate</goal>
-                        </goals>
-                      </pluginExecutionFilter>
-                      <action>
-                        <ignore/>
-                      </action>
-                    </pluginExecution>
+<!--                     <pluginExecution> -->
+<!--                       <pluginExecutionFilter> -->
+<!--                         <groupId>io.spring.javaformat</groupId> -->
+<!--                         <artifactId>spring-javaformat-maven-plugin</artifactId> -->
+<!--                         <versionRange>[0,)</versionRange> -->
+<!--                         <goals> -->
+<!--                           <goal>validate</goal> -->
+<!--                         </goals> -->
+<!--                       </pluginExecutionFilter> -->
+<!--                       <action> -->
+<!--                         <ignore/> -->
+<!--                       </action> -->
+<!--                     </pluginExecution> -->
                   </pluginExecutions>
                 </lifecycleMappingMetadata>
               </configuration>
