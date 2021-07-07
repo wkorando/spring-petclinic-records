@@ -1,8 +1,6 @@
 package org.springframework.samples.petclinic.vet;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 import org.springframework.stereotype.Service;
 
@@ -16,13 +14,13 @@ public class VetsService {
 	}
 	
 	
-	public List<VetDto> findAll(){
-		Collection<Vet> vets = vetRepo.findAll();
-		List<VetDto> vetRecords = new ArrayList<>();
-		for(Vet vet : vets) {
-			vetRecords.add(new VetDto(vet.getId(), vet.getFirstName(), vet.getLastName(), vet.getSpecialties()));
-		}
+	public Collection<VetDto> findAll(){
+//		Collection<VetDto> vets = vetRepo.findAll();
+//		List<VetDto> vetRecords = new ArrayList<>();
+//		for(Vet vet : vets) {
+//			vetRecords.add(new VetDto(vet.getId(), vet.getFirstName(), vet.getLastName(), vet.getSpecialties()));
+//		}
 		
-		return vetRecords;
+		return vetRepo.findAll();
 	}
  }

@@ -28,7 +28,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.samples.petclinic.visit.Visit;
+import org.springframework.samples.petclinic.visit.VisitEntity;
 import org.springframework.samples.petclinic.visit.VisitRepository;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -82,7 +82,7 @@ class OwnerControllerTests {
 		max.setBirthDate(LocalDate.now());
 		george.setPetsInternal(Collections.singleton(max));
 		given(this.owners.findById(TEST_OWNER_ID)).willReturn(george);
-		Visit visit = new Visit();
+		VisitEntity visit = new VisitEntity(max.getId());
 		visit.setDate(LocalDate.now());
 		given(this.visits.findByPetId(max.getId())).willReturn(Collections.singletonList(visit));
 	}

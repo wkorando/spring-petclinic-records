@@ -1,0 +1,43 @@
+JAVA 8
+
+java -XX:+UnlockCommercialFeatures -Xmx64m  -XX:+UseG1GC -XX:StartFlightRecording=filename=recording-java8.jfr,settings=profile,dumponexit=true -jar target/spring-petclinic-2.4.5.jar
+
+JAVA 8 (16)
+
+java -XX:StartFlightRecording=disk=true,filename=recording-java8-16.jfr,settings=profile -jar target/spring-petclinic-2.4.5.jar
+
+
+java -Xmx64m -XX:StartFlightRecording=filename=recording-java8-16.jfr,settings=profile,dumponexit=true -jar target/spring-petclinic-2.4.5.jar
+
+Full JAVA 16 
+java -XX:StartFlightRecording=disk=true,filename=recording-16.jfr,settings=profile -jar target/spring-petclinic-16-2.5.1.jar
+
+
+java -XX:+UnlockCommercialFeatures -Xmx48M  -XX:+UseG1GC -XX:StartFlightRecording=filename=recording-java8.jfr,settings=profile,dumponexit=true -jar target/spring-petclinic-2.4.5.jar
+
+
+
+java -Xmx48m  -XX:+UseG1GC -XX:StartFlightRecording=filename=recording-java16.jfr,settings=profile,dumponexit=true -jar target/spring-petclinic-2.4.5.jar
+
+
+
+
+java -XX:+UnlockCommercialFeatures  -XX:+UseG1GC -XX:StartFlightRecording=filename=recording-java8.jfr,settings=profile,dumponexit=true -jar target/spring-petclinic-2.4.5.jar
+
+
+
+java  -XX:+UseG1GC -XX:StartFlightRecording=filename=recording-java16.jfr,settings=profile,dumponexit=true -jar target/spring-petclinic-2.4.5.jar
+
+
+500 Request 
+
+heap size 48 MB
+G1 GC
+
+
+Java 8 run: 137.107
+Started PetClinicApplication in 7.753 seconds (JVM running for 8.665)
+
+
+Java 16 run: 129.992
+Start up: Started PetClinicApplication in 5.804 seconds (JVM running for 6.452)
